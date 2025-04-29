@@ -16,7 +16,7 @@ Both of these architectures implement [grouped-query attention](https://arxiv.or
 # Implementation
 
 We will only implement autoregressive decoding, which supports inference (generation) with one token at a time.
-With single-token decoding, we avoid the masked matrix multiply operator which is the focus of most transformer optimization such as [FlashAttention](https://arxiv.org/pdf/2205.14135).
+With single-token decoding, we avoid the masked attention operator which is the focus of most transformer optimization such as [FlashAttention](https://arxiv.org/pdf/2205.14135).
 Additionally, we will not support batching.
 
 We will use the [`bfloat16`](https://en.wikipedia.org/wiki/Bfloat16_floating-point_format) data type to store
