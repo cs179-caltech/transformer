@@ -3,7 +3,7 @@
 #include <memory>
 
 #include "Qwen2Layer.cuh"
-#include "Qwen2Config.h"
+#include "QwenConfig.h"
 #include "../ErrorCheck.h"
 #include "../gpu_ops/LayerNorm.cuh"
 #include "../gpu_ops/ArgMax.cuh"
@@ -12,7 +12,7 @@ template<Qwen2Size QWEN2_SIZE>
 class Qwen2Model {
     cudaStream_t stream;
 public:
-    using Qwen2Config = Qwen2Config<QWEN2_SIZE>;
+    using Qwen2Config = QwenConfig<QWEN2_SIZE>;
     using Qwen2Layer = Qwen2Layer<QWEN2_SIZE>;
 
     Qwen2Model() {

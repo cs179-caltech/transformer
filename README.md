@@ -49,11 +49,11 @@ For the questions, cite sources you used. To submit, zip your repository to `~/l
 ### Question 1.1 (5 points)
 In this assignment, we will not be using tensor cores, because they require advanced data transfer layouts.
 Instead, we will implement matrix-vector multiply with standard fused-multiply-add operators.
-What is ratio of BF16 tensor core FLOPS to BF16 non-tensor core FLOPS on an A100 GPU?
+What is ratio of BF16 tensor core FLOPS to BF16 non-tensor core FLOPS on an A100-PCIE-40GB GPU?
 Note: NVIDIA and AMD marketing both try to inflate their performance by measuring "sparse" tensor core operations, but nobody uses those.
 
 ### Question 1.2 (5 points)
-What is the expected speedup of tensor cores vs non-tensor cores for matrix-vector multiplication on an A100 GPU?
+What is the expected speedup of tensor cores vs non-tensor cores for matrix-vector multiplication on an A100-PCIE-40GB GPU?
 Make an argument based on arithmetic intensity (FLOPS is not the whole story).
 Assume the matrix and vector are read from off-chip memory.
 
@@ -89,7 +89,7 @@ Qwen2 0.5B layer grouped-query attention operation? Assume current sequence leng
 
 ### Question 2.3 (5 points)
 Assuming off-chip memory bandwidth is the limiting factor, what is the theoretical minimum inference latency (in ms)
-for Qwen2 0.5B on an A100, with BF16 weights? Assume small sequence length (i.e. KV cache size is negligible).
+for Qwen2 0.5B on an A100-PCIE-40GB, with BF16 weights? Assume small sequence length (i.e. KV cache size is negligible).
 
 ### Question 2.4 (5 points)
 Determine the sequence length at which the KV cache becomes non-negligible in terms of performance;
