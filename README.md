@@ -151,10 +151,12 @@ and check when they diverge.
 ## Test cases
 Run all test cases with:
 - `cd build`
+- `cmake --build .`
 - `ctest`
 
 For tests that are failing, you can run them individually to see which elements were incorrect, for example:
 - `cd build`
+- `cmake --build .`
 - `./silumulttest`
 
 Failing output:
