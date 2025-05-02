@@ -148,5 +148,27 @@ and check when they diverge.
   - Save a tensor to disk: `dump binary memory /tmp/queries.bin queries->data ((uint8_t*)queries->data)+queries->size`
   - Load the tensor in python: `torch.from_file('/tmp/queries.bin',size=head_size*num_query_heads,dtype=torch.bfloat16).reshape(num_query_heads, head_size)`
 
+## Test cases
+Run all test cases with:
+- `cd build`
+- `ctest`
+
+For tests that are failing, you can run them individually to see which elements were incorrect, for example:
+- `cd build`
+- `./silumulttest`
+
+Failing output:
+```
+difference at index 0: GPU calculated 10.875, CPU calculated 108.5
+difference at index 1: GPU calculated -5.65625, CPU calculated 0.332031
+difference at index 2: GPU calculated 7.3125, CPU calculated -76.5
+...
+```
+
+Also, note that passing all test cases does not mean you will get an A.
+The test cases only check for correctness, not for performance.
+If your kernels have needless suboptimal memory access, poor occupancy, or other performance issues,
+the tests will still pass, but you will not get a good grade.
+
 ## Author
 Sam Foxman 2025
