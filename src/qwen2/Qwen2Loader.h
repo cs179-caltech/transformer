@@ -3,7 +3,7 @@
 #include <string>
 #include <memory>
 #include "../CudaBuffer.cuh"
-#include "QwenConfig.h"
+#include "Qwen2Config.h"
 #include "Qwen2Model.cuh"
 #include "../vendor/safetensors.hh"
 #include <iostream>
@@ -24,7 +24,7 @@ public:
 
     template<Qwen2Size QWEN2_SIZE>
     static std::shared_ptr<Qwen2Model<QWEN2_SIZE>> load_qwen2(const std::string &safetensors_file, int32_t max_seq_len) {
-        using Qwen2Config = QwenConfig<QWEN2_SIZE>;
+        using Qwen2Config = Qwen2Config<QWEN2_SIZE>;
         auto model = std::make_shared<Qwen2Model<QWEN2_SIZE>>();
 
         // open safetensors file

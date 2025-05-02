@@ -2,7 +2,7 @@
 
 #include <cuda_bf16.h>
 
-#include "QwenConfig.h"
+#include "Qwen2Config.h"
 #include "../CudaBuffer.cuh"
 #include <memory>
 
@@ -16,7 +16,7 @@
 template<Qwen2Size QWEN2_SIZE>
 class Qwen2Layer {
 public:
-    using Qwen2Config = QwenConfig<QWEN2_SIZE>;
+    using Qwen2Config = Qwen2Config<QWEN2_SIZE>;
 
     Qwen2Layer(uint32_t layer_num, uint32_t max_seq_len):
     layer_num(layer_num), input_layernorm(Qwen2Config::hidden_size()), post_attention_layernorm(Qwen2Config::hidden_size()) {
